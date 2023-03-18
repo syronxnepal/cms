@@ -1,4 +1,4 @@
-import SegmentIcon from '@mui/icons-material/Segment';
+import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import { Box, List, useTheme } from '@mui/material';
 import { Popover } from 'components';
 
@@ -13,17 +13,19 @@ const EllipseMenu = ({ children, open }: IProps): JSX.Element => {
 
   return (
     <Popover
-      buttonIcon={<SegmentIcon />}
+      buttonIcon={<MoreVertOutlinedIcon />}
       buttonSx={{ width: 32, height: 32 }}
       open={open}
       sx={{
         borderRadius: theme.customBorderRadius.sm,
-        padding: 1,
+        padding: 0.5,
         minWidth: 180,
       }}
     >
       <Box>
-        <List className="ellipse-menu-list">{children}</List>
+        <List className="ellipse-menu-list" sx={{ padding: 0.5 }}>
+          {children}
+        </List>
       </Box>
     </Popover>
   );

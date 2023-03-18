@@ -10,6 +10,7 @@ import { changeFilters, selectBookFilter } from 'stores/book';
 import { useAppDispatch, useAppSelector } from 'stores/hooks';
 import { getTotalPagesCount } from 'utils/common';
 
+import BookGrid from './BookGrid';
 import BookTable from './BookTable';
 
 const Organization = () => {
@@ -20,7 +21,7 @@ const Organization = () => {
   const dispatch = useAppDispatch();
   const queryClient = useQueryClient();
   const bookQuery = useBookQuery(filters);
-
+  const [isGridView, setGridView] = useState(false);
   const totalCount = bookQuery.data?.count || 0;
   const isLoading = bookQuery.isLoading || bookQuery.isFetching;
   const totalPagesCount = totalCount
@@ -49,12 +50,15 @@ const Organization = () => {
     setCurrentPage(1);
   };
 
+  const onViewChange = (view: boolean) => setGridView(view);
+
   return (
-    <Stack>
+    <Stack spacing={2}>
       <TableBanner
         onAddClick={handleAddClick}
         onRefreshClick={onRefreshClick}
         onSearchKeywordChange={onSearchKeywordChange}
+        onViewChange={onViewChange}
         pageLimit={{
           data: filters.limit,
           onChange: onPageLimitChange,
@@ -63,11 +67,19 @@ const Organization = () => {
         title="Books"
         totalCount={totalCount}
       />
-      <BookTable
-        data={bookQuery.data?.rows || []}
-        isLoading={isLoading}
-        totalCount={totalCount}
-      />
+      {isGridView ? (
+        <BookGrid
+          data={bookQuery.data?.rows || []}
+          isLoading={isLoading}
+          totalCount={totalCount}
+        />
+      ) : (
+        <BookTable
+          data={bookQuery.data?.rows || []}
+          isLoading={isLoading}
+          totalCount={totalCount}
+        />
+      )}
 
       {!isLoading && totalPagesCount > 1 && (
         <Pagination

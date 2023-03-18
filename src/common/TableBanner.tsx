@@ -29,6 +29,7 @@ import PageLimitSelect from 'components/select/PageLimitSelect';
 import { debounce } from 'utils/lodash';
 // import ExcelExport from './ExcelExport';
 
+import ListView from './ListView';
 import PermissionGate from './PermissionGate';
 
 interface IProps {
@@ -62,6 +63,7 @@ interface IProps {
   onExportCurrentListAsExcelClick?: VoidFunction;
   onRefreshClick: VoidFunction;
   totalCount: number;
+  onViewChange?: (value: boolean) => void;
 }
 
 const TableBanner = ({
@@ -81,6 +83,7 @@ const TableBanner = ({
   onExportCurrentListAsExcelClick,
   onRefreshClick,
   totalCount,
+  onViewChange,
 }: IProps) => {
   const [keyword, setKeyword] = useState('');
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
@@ -178,6 +181,7 @@ const TableBanner = ({
               <SyncIcon />
             </IconButton>
           </Tooltip>
+          {onViewChange && <ListView onChange={onViewChange} />}
           {pageLimit && (
             <PageLimitSelect
               data={pageLimit.data}
@@ -243,6 +247,7 @@ TableBanner.defaultProps = {
   onExportCurrentListAsExcelClick: undefined,
   radiusLimit: undefined,
   pageLimit: undefined,
+  onViewChange: undefined,
   hideAdvancedFilter: false,
 };
 

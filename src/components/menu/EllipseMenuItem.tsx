@@ -23,7 +23,7 @@ const EllipseMenuItem = ({
     <PermissionGate>
       <ListItem disablePadding onClick={onClick}>
         <ListItemButton>
-          <ListItemIcon>{iconElement}</ListItemIcon>
+          <ListItemIcon sx={{ minWidth: 36 }}>{iconElement}</ListItemIcon>
           <ListItemText primary={text} />
         </ListItemButton>
       </ListItem>
@@ -31,7 +31,7 @@ const EllipseMenuItem = ({
   ) : (
     <ListItem disablePadding onClick={onClick}>
       <ListItemButton>
-        <ListItemIcon>{iconElement}</ListItemIcon>
+        <ListItemIcon sx={{ minWidth: 36 }}>{iconElement}</ListItemIcon>
         <ListItemText primary={text} />
       </ListItemButton>
     </ListItem>

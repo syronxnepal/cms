@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import SegmentOutlinedIcon from '@mui/icons-material/SegmentOutlined';
-import { Menu, MenuItem, TableCell, TableRow } from '@mui/material';
+import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
+import { List, Menu, TableCell, TableRow } from '@mui/material';
 import { EllipseMenu, EllipseMenuItem } from 'components';
 import ModalKey from 'enums/ModalKey';
 
@@ -40,6 +40,14 @@ const BookTableRow = ({ data }: IProps): JSX.Element => {
     setContextMenu(null);
   };
 
+  const editMenu = (
+    <EllipseMenuItem
+      checkPermission={false}
+      iconElement={<ModeEditOutlineOutlinedIcon />}
+      onClick={handleEdit}
+      text="Edit Book"
+    />
+  );
   return (
     <TableRow
       onContextMenu={handleContextMenu}
@@ -51,14 +59,7 @@ const BookTableRow = ({ data }: IProps): JSX.Element => {
       <TableCell align="left">{data.publication}</TableCell>
 
       <TableCell align="right">
-        <EllipseMenu>
-          <EllipseMenuItem
-            checkPermission={false}
-            iconElement={<SegmentOutlinedIcon />}
-            onClick={handleEdit}
-            text="Edit Book"
-          />
-        </EllipseMenu>
+        <EllipseMenu>{editMenu}</EllipseMenu>
       </TableCell>
       <Menu
         anchorPosition={
@@ -69,11 +70,11 @@ const BookTableRow = ({ data }: IProps): JSX.Element => {
         anchorReference="anchorPosition"
         onClose={handleClose}
         open={contextMenu !== null}
+        sx={{ paddingY: 0.5 }}
       >
-        <MenuItem onClick={handleEdit}>Edit</MenuItem>
-        <MenuItem onClick={handleClose}>Print</MenuItem>
-        <MenuItem onClick={handleClose}>Highlight</MenuItem>
-        <MenuItem onClick={handleClose}>Email</MenuItem>
+        <List className="ellipse-menu-list" sx={{ padding: 0.5 }}>
+          {editMenu}
+        </List>
       </Menu>
     </TableRow>
   );
