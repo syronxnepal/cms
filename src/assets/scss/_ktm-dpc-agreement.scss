@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+.heading {
+  color: black; // Remove hardcoded values for color 
+}
+
+.client-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.client-name {
+  margin-left: 2px;
+}
+
+.paragraph1 {
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.paragraph2 {
+  padding-left: 40px;
+  margin-top: 10px;
+
+  .span {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .span1 {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-right: 10px;
+  }
+
+  .fees {
+    margin-left: 28px;
+  }
+}
+
+.paragraph3 {
+  padding-left: 40px;
+  margin-top: 15px;
+
+  .span {
+    margin-right: 10px;
+  }
+
+  .span1 {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-right: 10px;
+  }
+}
+
+.paragraph4 {
+  padding-left: 40px;
+  margin-top: 15px;
+
+  .span {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .span1 {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-right: 10px;
+  }
+}
+
+.change-style {
+  align-self: flex-end;
+  justify-self: flex-start;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.select-service {
+  margin-top: 20px;
+}

@@ -1,0 +1,21 @@
+@import './theme-vars.module';
+
+.practice-profile {
+  &__container {
+    height: 150px;
+    background-color: $primaryMain;
+    position: relative;
+  }
+
+  &__tab-container {
+    position: absolute;
+    bottom: 0;
+  }
+
+  // &__tab-panel-container {
+  //   position: absolute;
+  //   left: 350px;
+  //   background-color: lightblue;
+  //   width: 100%;
+  // }
+}

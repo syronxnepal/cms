@@ -1,0 +1,18 @@
+.two-factor-code-verfication {
+    input {
+      display: inline !important;
+      &:focus {
+        outline: none !important;
+        border: 1.5px solid #00a1be !important;
+      }
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    /* Firefox */
+    input[type='number'] {
+      -moz-appearance: textfield;
+    }
+  }

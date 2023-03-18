@@ -1,0 +1,330 @@
+@import './theme-vars.module';
+
+.text-overflow-ellipses {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hoverable-list-item {
+  &:hover {
+    color: $secondaryMain;
+  }
+}
+
+.list-border-top {
+  border-top: 1px solid $grayLight;
+}
+
+.list-border-bottom {
+  border-bottom: 1px solid $grayLight;
+}
+
+.modal-content {
+  &--fixed-height {
+    height: $modalContentHeight;
+  }
+}
+
+.vertical-align-top {
+  vertical-align: top !important;
+}
+.text-link {
+  color: $secondaryMain;
+  cursor: pointer;
+}
+
+// -------------- Attachment ----------------------------- //
+
+.attachment {
+  display: inline-block;
+  height: 4rem;
+
+  &__content-wrapper {
+    width: 15rem;
+    height: 100%;
+    background-color: $infoLighter;
+    border-top-left-radius: 0.5rem !important;
+    border-bottom-left-radius: 0.5rem !important;
+    display: flex;
+    align-items: center;
+    text-decoration: none !important;
+    margin: 0 !important;
+    color: $secondaryDark !important;
+    transition: all 0.4s ease 0s;
+    &:hover {
+      .MuiTypography-root {
+        color: $primaryLight;
+      }
+    }
+  }
+
+  &__icon-wrapper {
+    height: 100%;
+    background-color: $primaryMain !important;
+    border-top-right-radius: 0.5rem !important;
+    border-bottom-right-radius: 0.5rem !important;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s ease 0s;
+    border: none;
+    min-width: 45px !important;
+    padding: 0 !important;
+    &:hover {
+      background-color: $primaryLight !important;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.hide-input-number-spin {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  -moz-appearance: textfield;
+}
+
+.print-file {
+  width: 900px;
+  height: 1273.06px;
+  position: relative;
+}
+@page {
+  size: A3;
+}
+@media print {
+  .print-page {
+    border: initial;
+    border-radius: initial;
+    width: initial;
+    min-height: initial;
+    box-shadow: initial;
+    background: initial;
+    page-break-after: always;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+// -------- Client Agreement ------- //
+
+.client-agreement-main {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-family: 'Libre Baskerville', serif;
+  page-break-inside: avoid;
+  background-color: #f1f0f0; // Remove hardcoded values for color
+  padding: 20px;
+
+  p {
+    font-size: 1rem;
+    flex-wrap: wrap;
+  }
+
+  h6,
+  h7 {
+    font-size: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+#divIdToPrint {
+  font-family: 'Libre Baskerville', serif;
+  background-color: #ffff;
+  padding: 20px;
+}
+
+.client-agreement-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.client-agreement-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.oleo {
+  font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+.bebas {
+  font-family: 'Bebas Neue', cursive;
+}
+
+.brush {
+  font-family: 'Water Brush', cursive;
+}
+
+.pacifico {
+  font-family: 'Pacifico', cursive;
+}
+
+.client-advocacy {
+  display: flex;
+  flex-direction: column;
+
+  .advocacy-paragraph {
+    margin-top: 10px;
+  }
+}
+
+.client-consent {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.signature-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.client-signature {
+  margin-left: 30px;
+}
+
+.spacing {
+  margin: 15px 0px 10px 5px;
+}
+
+.text-bold {
+  font-weight: 700 !important;
+}
+
+.align-self {
+  align-self: center;
+}
+
+.text-underline {
+  font-family: 'Libre Baskerville', serif;
+  border-bottom: 1px solid;
+  width: 180px;
+}
+
+.word_underline {
+  text-decoration: underline;
+}
+
+.defaultFont {
+  font-family: 'Water Brush', cursive;
+}
+
+.font {
+  font-family: 'Libre Baskerville', serif;
+}
+
+#nextpage1 {
+  page-break-before: always;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.client-account {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.clientSignature {
+  flex-direction: row;
+  display: flex;
+}
+
+.agreementImage {
+  margin-left: 50px;
+  flex: 1;
+}
+
+.dropdownToggle {
+  margin-bottom: 15px;
+  padding-top: 15px;
+}
+
+.signatureImage {
+  object-fit: contain;
+  height: 50px;
+  width: 150px;
+
+  p {
+    font-size: 28px;
+  }
+}
+
+.signatureText {
+  width: 190px;
+  margin-top: -15px;
+  border-top: 1px solid;
+}
+
+.sign {
+  cursor: pointer;
+  border: 1px solid;
+  width: min-content;
+  padding: 5px;
+}
+
+.clientSignatureText {
+  border-top: 1px solid;
+  margin-top: 10px;
+  flex: 1;
+  width: 190px;
+}
+
+.date {
+  flex-direction: row;
+  display: flex;
+  flex: 1;
+
+  .text-underline {
+    margin-left: 15px;
+    width: 180px;
+  }
+}
+
+.cc {
+  margin-left: 30px;
+}
+
+.download {
+  text-decoration: underline;
+  color: #0000ee; // Remove hardcoded values for color
+  cursor: pointer;
+}
+
+.dropdown-toggle:after {
+  display: none;
+  margin-left: -10px;
+  background-color: #1ab2ff; // Remove hardcoded values for color
+}
+
+.cancel-text {
+  align-self: flex-end;
+  margin-top: 10px;
+  margin-right: 10px;
+  color: #1ab2ff; // Remove hardcoded values for color
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.client-service {
+  font-family: 'Libre Baskerville', serif !important;
+}
+.font-italic {
+  font-style: italic;
+}

@@ -1,0 +1,31 @@
+.heroku-img {
+  background-image: url(https://imgix.cosmicjs.com/a0687bd0-9496-11ec-96f2-43bdd99faa64-banner-img-mini.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+}
+
+.box-flexContainer {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: 'relative';
+}
+
+.forgot-password-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-left: 0px;
+  padding-right: 0px;
+  cursor: pointer;
+}
+.auth-bottom-content {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+}

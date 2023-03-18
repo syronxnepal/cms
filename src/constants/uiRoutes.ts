@@ -1,0 +1,17 @@
+export default {
+  organization: '/organization',
+  dashboard: '/dashboard',
+  books: '/library/books',
+  fine: '/library/fine',
+  borrow: '/library/borrow',
+  library: '/library',
+  students: '/users/students',
+  admins: '/users/admins',
+  parents: '/users/parents',
+  users: '/users',
+  profile: '/profile',
+  settings: '/settings',
+  login: '/login',
+  pageNotFound: 'page-not-found',
+  modal: 'modal',
+};
