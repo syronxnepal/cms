@@ -2,7 +2,7 @@ import React from 'react';
 
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 import TableChartOutlinedIcon from '@mui/icons-material/TableChartOutlined';
-import { ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { ToggleButton, ToggleButtonGroup, Tooltip } from '@mui/material';
 
 interface IProps {
   onChange: (value: boolean) => void;
@@ -26,12 +26,16 @@ const ListView = ({ onChange }: IProps) => {
       onChange={handleAlignment}
       value={alignment}
     >
-      <ToggleButton aria-label="table" size="small" value="table">
-        <TableChartOutlinedIcon />
-      </ToggleButton>
-      <ToggleButton aria-label="grid" size="small" value="grid">
-        <GridViewOutlinedIcon />
-      </ToggleButton>
+      <Tooltip title="Table View">
+        <ToggleButton aria-label="table" size="small" value="table">
+          <TableChartOutlinedIcon />
+        </ToggleButton>
+      </Tooltip>
+      <Tooltip title="Grid View">
+        <ToggleButton aria-label="grid" size="small" value="grid">
+          <GridViewOutlinedIcon />
+        </ToggleButton>
+      </Tooltip>
     </ToggleButtonGroup>
   );
 };
